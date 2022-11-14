@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+<div id="container"></div>
+<input id="add-item-btn" type="button" value="+">
+
+
+<script>
+
+    const container = document.getElementById("container");
+    const btn = document.querySelector("#add-item-btn");
+
+    btn.onclick = () => {
+        const element = document.createElement("div");
+        element.classList.add("element");
+        element.innerText = "Element";
+        container.append(element);
+    }
+
+</script>
+</body>
+</html>

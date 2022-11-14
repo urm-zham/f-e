@@ -1,0 +1,58 @@
+@import "variables"
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    font: $defFont
+    font-weight: 400
+    color: #9A9D9F
+    background-color: $bgColor
+
+
+
+.wrapper
+
+
+.wrapper
+    > div
+        margin-bottom: 200px
+        @media (max-width: 768px)
+            margin-bottom: 40px
+    a
+        text-decoration: none
+
+
+
+.container
+    width: 1224px
+    margin: 0 auto
+
+    @media (max-width: 1244px)
+        width: 100%
+        padding: 0 20px
+
+    @media (max-width: 786px)
+        width: 100%
+        padding: 0 20px
+
+
+.title-text
+    @include fontStyle($titleColor, normal, 500, 48px, 62px)
+
+
+.regular-text
+    @include fontStyle($regularColor, normal, 500, 18px, 30px)
+
+
+.item-title
+    @include fontStyle($itemColor, normal, 500, 24px, 36px)
+
+
+.item-price
+    @include fontStyle($itemPriceColor, normal, 400, 18px, 27px)
+
+.item-text
+    @include fontStyle($regularColor, normal, 400, 16px, 30px)

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 1 Task 2 Movie recs</title>
+</head>
+<body>
+<!--Задание 2-->
+<!--Написать программу на JS, которая рекомендует фильм в зависимости от возраста пользователя. Программа сначала должна спросить у пользователя его возраст.-->
+
+<!--Если возраст от 1 до 13: посоветуйте ваш любимый мультфильм.-->
+<!--Если возраст от 14 до 17: посоветуйте приключенческий фильм.-->
+<!--Если возраст от 18 и выше: посоветуйте серьезный фильм.-->
+
+
+<script>
+    let age = prompt("How old are you?");
+    age = Number(age);
+
+    if (age >= 125 || age < 0 || isNaN(age)) {
+
+        alert("Please enter a valid age between 0 or 125.");
+
+    } else{
+
+        let res;
+
+        if (age >= 1 && age <= 5) {
+            res = "Puppy Patrol";
+        }
+        else if (age >= 6 && age <= 12) {
+            res = "Ernest et Célestine, Meet the Robinsons, Ratatouille";
+        }
+        else if (age >= 13 && age <= 17) {
+            res = "Harry Potter, Pirates of the Caribbean, The Lord of the Rings";
+        }
+        else {
+            res = "The Shawshank Redemption, Knockin' on Heaven's Door, Requiem for a Dream";
+        }
+
+        alert("You can watch "+res);
+
+    }
+</script>
+</body>
+</html>

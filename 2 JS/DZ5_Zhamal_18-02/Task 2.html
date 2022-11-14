@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+<body>
+
+<form onsubmit="showAlert(); return false;">
+    <input type="text" name="username" />
+    <input type="text" name="password" />
+    <input type="submit" value="Log in"  disabled/>
+</form>
+
+
+<script>
+    function showAlert() {
+        alert("Username: " + username.value +"\nPassword: "+ password.value);
+    }
+    function enableLogIn (username, password) {
+        if (username.length >= 6 && password.length >= 6) {
+            btn.disabled = false;
+        } else {
+            btn.disabled = true;
+        }
+    }
+
+    const form = document.querySelector("form");
+    const username = form.children[0];
+    const password = form.children[1];
+    const btn = form.children[2];
+
+    username.onkeyup = () => {
+        enableLogIn(username.value, password.value)
+    }
+    password.onkeyup = () => {
+        enableLogIn(username.value, password.value)
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

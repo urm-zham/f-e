@@ -1,0 +1,43 @@
+$bgColor: #1E252B
+$defFont: 14px 'Poppins', sans-serif
+$titleColor: #E8E9EA
+$regularColor: #9A9D9F
+$itemColor: #CECFD0
+$itemPriceColor: #9A6C31
+$placeholder: #7A7F82
+$btnColor: #FF6E30
+$white: #FFFFFF
+$btnBordRad: 8px
+
+
+@mixin fontStyle($fcolor, $fstyle : normal, $fweight, $fsize, $lheight, $talign: left)
+    color: $fcolor
+    font-style: $fstyle
+    font-weight: $fweight
+    font-size: $fsize
+    line-height: $lheight
+    text-align: $talign
+    @content
+
+@mixin flexCenter($flexDir: row)
+        display: flex
+        align-items: center
+        justify-content: center
+        flex-direction: $flexDir
+
+@mixin changeFont( $fsize, $lheight, $talign: left)
+    font-size: $fsize
+    line-height: $lheight
+    text-align: $talign
+
+@mixin aButton ($btn-color, $w, $h, $br, $aw, $ah)
+    background: $btnColor
+    @include flexCenter
+    width: $w
+    height: $h
+    border-radius: $br
+
+    a
+        width: $aw
+        height: $ah
+

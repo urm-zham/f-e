@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Тест на таблицу умножения</title>
+</head>
+<body>
+Здесь мы будем улучшать программу, которая была задана как домашнее задание.
+Только теперь необходимо генерировать примеры в бесконечном цикле, пока пользователь не нажмет "Отмена".
+Когда он это сделает, нужно завершить цикл и показать пользователю его статистику - общее количество заданных вопросов,
+количество правильных и неправильных ответов.
+<script>
+
+    let n1, n2, res, ans;
+    let diffLevel, min, max;
+    let corrAns = 0, incorAns = 0, sumAns = 0;
+
+    diffLevel = prompt("Choose difficulty level (low, high, all):", "all");
+    if (diffLevel === "low") {
+        min = 1;
+        max = 5;
+    }
+    else if (diffLevel === "high") {
+        min = 6;
+        max = 9;
+    }
+    else { //all
+        min = 1;
+        max = 9;
+    }
+
+
+    do {
+        n1 = randomNumber(min, max);
+        n2 = randomNumber(min, max);
+        res = n1 * n2;
+
+        ans = prompt(n1 + " * " + n2);
+
+        if (Number(ans) === res) {
+            alert("You are correct!");
+            corrAns++;
+        }
+        else if (Number(ans) !== res && ans !== null) {
+            alert("You are wrong!");
+            incorAns++;
+        }
+
+    } while (ans != null)
+
+    sumAns = corrAns + incorAns;
+
+    alert(
+        "Total number of answers: " + sumAns + "\n" +
+        "Correct: " + corrAns + "\n" +
+        "Incorrect: " + incorAns
+        )
+
+
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+</script>
+</body>
+</html>

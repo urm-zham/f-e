@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+  class Human {
+    constructor(name, surname, age){
+      this.name = name;
+      this.age = age;
+      this.surname = surname;
+    }
+
+    say(){
+      console.log("hi i'm "+this.name+" "+this.surname)
+    }
+    walk(){ // protected method would have #
+      console.log("human walking")
+    }
+  }
+
+  const jude = new Human("jude","snow", 20);
+  console.log(jude)
+  console.log(jude.say())
+  class Programmer extends Human{
+    constructor(props, name, surname, age ){
+      const propsArr = Object.values(props);
+      super(...propsArr);
+      // super(props)
+      this.language = props.language;
+    }
+
+    say(){
+      console.log("hi i'm "+this.name+" "+this.surname+ " and i'm a programmer")
+    }
+  }
+
+  const alex = new Programmer({name: "alex", surname: "snow", age: 25, language: "JS"});
+  console.log(alex)
+  console.log(alex.say())
+  console.log(alex.walk())
+
+
+  const input = document.querySelector("input")
+  const btn = document.querySelector("button")
+  const todos = JSON.parse(localStorage.getItem("todos")) || [] //or nothing
+  btn.onclick = function (){
+    const div = document.createElement("div")
+    div.innerText = input.value
+    document.body.appendChild(div)
+    todos.push(input.value)
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }
+
+
+</script>
+</body>
+</html>

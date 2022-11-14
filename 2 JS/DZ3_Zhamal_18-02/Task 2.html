@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сообщение в рамочке</title>
+</head>
+<body>
+Написать программу, которая запрашивает у пользователя строку и выводит ее в консоль в прямоугольнике из звездочек.
+
+****************
+* Hello, world *
+****************
+
+
+<script>
+    const inp = prompt("Please write any sentence");
+
+    let aster = "";
+    for (let i = 0; i < inp.length + 4; i++) {
+        aster += "*";
+    }
+
+    // console.log(aster + "\n* "+inp+" *\n"+aster);
+    console.log(aster);
+    console.log("* " + inp + " *");
+    console.log(aster);
+
+</script>
+</body>
+</html>

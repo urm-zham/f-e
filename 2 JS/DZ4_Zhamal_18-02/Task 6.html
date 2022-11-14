@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 6</title>
+</head>
+<body>
+
+    <ul id="todo-list">
+    </ul>
+
+<script>
+
+    const ul = document.querySelector("#todo-list");
+    let task = "";
+    let li;
+
+   do {
+        task = prompt("Enter your task:");
+        if (task !== null && task !== "") {
+            li = document.createElement("li");
+            li.innerText = task;
+            ul.append(li);
+        }
+    }  while (task !== null && task !== "");
+
+
+</script>
+</body>
+</html>

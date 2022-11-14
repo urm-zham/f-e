@@ -1,0 +1,28 @@
+.parent {
+    background-color: darkgreen;
+    display: flex;
+    /*flex-direction: row;*/
+    /*flex-wrap: nowrap;*/
+    /*align-items: stretch;*/
+    /*justify-content: flex-start;*/
+    height: 550px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.parent .box {
+    width: 150px;
+    padding: 20px;
+    color: #ffffff;
+    background-color: darkorange;
+    text-align: center;
+    font-size: 35px;
+
+    /*display: inline-block;*/
+    flex: 1 1 150px ;
+    /*flex-grow: 1;*/
+    /*flex-shrink: 1;*/
+    /*flex-basis: 150px;*/
+}

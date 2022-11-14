@@ -1,0 +1,666 @@
+@import "variables"
+
+.home
+    position: relative
+    min-height: 100vh
+    background-image: url("../images/image-1.png")
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: right bottom
+
+    @include flexCenter(column)
+
+    @media (max-width: 768px)
+        min-height: inherit
+        padding-top: 140px
+        padding-bottom: 100px
+        height: 100vh
+        //background-image: none
+
+    @media (max-width: 481px)
+        background-image: none
+
+    h1
+        margin-bottom: 20px
+        width: 600px
+
+        @include fontStyle($titleColor, normal, 500, 50px, 70px)
+
+        @media (max-width: 768px)
+            width: auto
+            max-width: 600px
+            margin-left: auto
+            margin-right: auto
+
+            @include changeFont(35px, 50px, center)
+
+            @media (max-width: 481px)
+                @include changeFont(30px, 40px, center)
+
+    p
+        width: 490px
+        margin-top: 30px
+
+        @media (max-width: 768px)
+            width: auto
+            max-width: 490px
+            margin-left: auto
+            margin-right: auto
+            text-align: center
+
+        @media (max-width: 481px)
+                @include changeFont(13px, 25px, center)
+
+
+    form
+            position: relative
+            width: 500px
+            input
+                display: block
+                width: 100%
+                height: 64px
+                background-color: #283036
+                border-radius: 15px
+                border: 1px solid #343B40
+                outline: none
+                padding-inline-start: 55px
+                padding-inline-end: 150px
+                color: #ffffff
+                margin-top: 60px
+                cursor: text
+
+                @media (max-width: 481px)
+                    padding-inline-end: 30px
+                    margin-top: 25px
+            button
+                display: block
+                position: absolute
+                top: 50%
+                right: 10px
+                width: 130px
+                height: 48px
+                text-align: center
+                border-radius: 8px
+                background-color: #FF6E30
+                border: none
+                color: #ffffff
+                transform: translateY(-50%)
+                cursor: pointer
+
+                @media (max-width: 481px)
+                    left: 0
+                    right: 0
+                    margin-left: auto
+                    margin-right: auto
+                    top: 165%
+            label
+                display: block
+                position: absolute
+                left: 21px
+                top: 50%
+                transform: translateY(-50%)
+
+            @media (max-width: 768px)
+                width: auto
+                max-width: 500px
+                margin-left: auto
+                margin-right: auto
+
+
+
+.home__menu
+    position: absolute
+    top: 8px
+    height: 48px
+    width: 100%
+    span
+        @include fontStyle($titleColor, normal, 600, 22px, 33px)
+
+.menu__display
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-direction: row
+
+.menu__left
+    width: 140px
+    display: flex
+    flex-direction: row
+
+.menu__center
+
+    @media (max-width: 1224px)
+        display: none
+
+.menu__links
+    list-style: none
+
+    li
+        position: relative
+        display: inline-block
+        padding: 0px 20px
+
+        &:first-child
+            padding-left: 0
+        &:last-child
+            padding-right: 0
+
+        a
+            @include fontStyle($regularColor, normal, 500, 16px, 24px, center)
+
+.arrow:hover::after
+        display: inline-block
+        cursor: pointer
+
+.arrow::after
+        content: "\f078"
+        position: absolute
+        display: none
+        top: 50%
+        transform: translateY(-50%)
+        padding-left: 7px
+        font-size: 16px
+        font-family: 'FontAwesome'
+
+
+
+.menu__right
+    width: 203px
+    height: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+    @include fontStyle($regularColor, normal, 600, 16px, 24px, center)
+
+    @media (max-width: 481px)
+        display: none
+
+    p
+        margin-left: 41px
+        margin-top: auto
+        margin-bottom: auto
+        text-align: center
+    a
+        @include fontStyle($regularColor, normal, 600, 16px, 24px, center)
+
+    .sign-up-btn
+        @include aButton ($btnColor, 118px, 48px, $btnBordRad, 62px, 24px)
+
+        a
+            @include fontStyle($white, normal, 600, 16px, 24px, center)
+
+
+
+.home__social
+    position: absolute
+    bottom: 0
+    width: 100%
+
+    @media (max-width: 768px)
+            width: auto
+            left: 50%
+            transform: translateX(-50%)
+
+    a
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 58px
+        height: 58px
+        border-radius: 8px
+
+    a + a
+        margin-left: 8px
+
+.home__socialMedia
+    display: flex
+
+
+.brands__inner
+    background-color: #21292E
+    border-radius: 25px
+    background-image: url("../images/brands-gradient.png")
+    background-size: contain
+    background-repeat: no-repeat
+    padding-top: 50px
+    padding-bottom: 50px
+    border: 2px solid #262D32
+    backdrop-filter: blur(50px)
+    @media (max-width: 768px)
+        padding-bottom: 0
+        //background-image: none
+        background: none
+        border: none
+
+
+.brands__title
+    @include fontStyle(#D3D4D5, normal, 500, 24px, 36px, center)
+
+    @media (max-width: 768px)
+        @include changeFont(18px, 22px, center)
+
+    @media (max-width: 481px)
+        @include changeFont(16px, 20px, center)
+
+.brands__images
+    margin-top: 50px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    align-content: end
+    flex-direction: row
+    flex-wrap: wrap
+    @media (max-width: 768px)
+        flex-direction: column
+        align-content: center
+        margin-bottom: 40px
+
+    .logos
+        padding: 0 10px
+        @media (max-width: 768px)
+            margin-bottom: 40px
+
+        @media (max-width: 481px)
+            margin-bottom: 15px
+
+            img
+                @media (max-width: 786px)
+                    height: 30px
+
+
+
+/*3rd block - Most popular tools (6 blocks)*/
+
+.tools__title
+    @include flexCenter(column)
+
+.tools__inner
+    .title-text
+        width: 455px
+        margin-bottom: 25px
+        @include fontStyle($titleColor, normal, 500, 48px, 30px, center)
+
+        @media (max-width: 768px)
+            width: auto
+            @include changeFont(35px, 50px, center)
+
+        @media (max-width: 481px)
+            @include changeFont(20px, 35px, center)
+
+    .tools__title .regular-text
+        width: 427px
+        margin-bottom: 110px
+        @include fontStyle($regularColor, normal, 500, 18px, 30px, center)
+        @media (max-width: 768px)
+            margin-bottom: 30px
+            width: auto
+            @include changeFont(16px, 25px, center)
+
+
+.tools__items
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-direction: row
+    flex-wrap: wrap
+
+    @media (max-width: 768px)
+        justify-content: center
+        align-items: center
+
+
+
+.item__box
+    width: 392px
+    height: 294px
+    border-radius: 15px
+    padding: 33px
+    margin-bottom: 100px
+    flex: 0 1 392px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    transition: .5s
+
+    @media (max-width: 768px)
+        margin-bottom: 40px
+
+    &:hover
+        transform: translateY(-20px)
+        background: #283036 url('../images/tool_back.svg') no-repeat top right
+        background-size: cover
+
+        .actions-visit
+            background-color: #FF6E30
+            color: #FFFDFC
+
+.item__header
+    display: flex
+
+.item__icons
+    min-width: 64px
+    margin-right: 30px
+
+.item__title
+    display: flex
+    flex-direction: column
+    justify-content: space-evenly
+
+.item__desc
+    width: 326px
+    height: 60px
+
+.item__desc .regular-text
+    @include fontStyle($regularColor, normal, 400, 16px, 30px)
+
+.item__actions
+    display: flex
+    justify-content: space-between
+    align-items: center
+    align-content: center
+
+.item__actions__left
+    display: flex
+
+.actions
+    height: 42px
+    width: 42px
+    border-radius: 8px
+    @include flexCenter
+
+    &+ .actions
+        margin-left: 12px
+
+.actions-visit
+    height: 42px
+    min-width: 106px
+    border-radius: 8px
+    @include fontStyle($regularColor, normal, 600, 16px, 24px)
+
+.footer
+    border-top: 1px solid #343A40
+
+.tools__footer
+    @include flexCenter
+    width: 184px
+    height: 64px
+    border-radius: 8px
+    margin: 0 auto
+
+    a
+        @include fontStyle($btnColor, normal, 500, 20px, 30px)
+
+
+.tools-choice
+    background: url("../images/tools-gradient.png") no-repeat
+    background-size: contain
+
+
+/*4TH block - NEWCOMER TOOLS*/
+
+.newTools__inner
+    display: flex
+    align-items: stretch
+    padding-top: 20px
+    flex-wrap: wrap
+    @media (max-width: 768px)
+        justify-content: center
+
+
+.newTools__left
+    flex: 1
+    @media (max-width: 768px)
+        flex: 0
+
+.newTools__title
+    width: 427px
+    height: 300px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+
+    @media (max-width: 768px)
+        align-items: center
+        justify-content: space-evenly
+
+    .title-text
+
+        @media (max-width: 768px)
+            @include changeFont(35px, 50px, center)
+
+    .regular-text
+
+        @media (max-width: 768px)
+            width: auto
+            @include changeFont(16px, 25px, center)
+
+        @media (max-width: 481px)
+            @include changeFont(20px, 35px, center)
+
+
+
+.newTools-explore-btn
+    background: $btnColor
+    @include flexCenter
+    width: 198px
+    height: 58px
+    border-radius: 8px
+
+    a
+        width: 118px
+        height: 27px
+        @include fontStyle($white, normal, 500, 18px, 27px, center)
+
+
+.newTools__right
+    width: 600px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-direction: row
+    flex-wrap: wrap
+
+    .item__box
+        width: 288px
+        height: 284px
+        border-radius: 15px
+        padding: 28px 21px 28px 22px
+        margin-bottom: 50px
+        flex: 0 1 288px
+
+        &:hover
+            transform: translateY(-20px)
+            background: #283036 url('../images/newtools_gradient.svg') no-repeat top right
+            background-size: cover
+
+            .actions-visit
+                background-color: #FF6E30
+
+    .item__desc
+        width: 245px
+        height: 60px
+
+
+
+/*5TH block - REVIEWS*/
+
+.reviews__content
+    width: 849px
+    margin: 0 auto
+    display: flex
+    align-items: center
+
+.reviews__reviewer
+    position: relative
+    width: 399px
+    background: url('../images/reviews/circle.png') no-repeat left center
+
+    img
+        width: 100%
+
+.reviewer-info
+    position: absolute
+    width: 265px
+    height: 91px
+    background: url('../images/reviews/reviewer-info.png') no-repeat
+    top: 372px
+    right: 4px
+    bottom: 29px
+    backdrop-filter: blur(50px)
+    border-radius: 8px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-left: 23px
+
+    .title-text
+        @include fontStyle($titleColor, normal, 500, 26px, 39px)
+        letter-spacing: 0.015em
+
+    .regular-text
+        @include fontStyle($regularColor, normal, 400, 16px, 24px)
+
+
+.reviews__quote
+    flex: 1
+    position: relative
+
+    img
+        position: absolute
+        width: 103px
+        bottom: 130px
+
+
+.quote-text
+    margin-left: 60px
+
+
+.quote-text p
+    font-family: 'Roboto'
+    @include fontStyle($regularColor, normal, 400, 14px, 30px)
+    letter-spacing: 0.015em
+
+
+
+.subscribe__title
+    //width: 553px
+    @include flexCenter(column)
+
+.subscribe__title
+    margin-bottom: 100px
+    .title-text
+        width: 553px
+        height: 62px
+        margin-bottom: 25px
+        @include fontStyle($titleColor, normal, 500, 48px, 62px, center)
+
+    .regular-text
+        width: 427px
+        height: 60px
+        @include fontStyle($regularColor, normal, 500, 18px, 30px, center)
+
+.email__wrapper
+    position: relative
+    width: 549px
+    height: 64px
+    margin: 0 auto
+
+input
+    width: 100%
+    height: 100%
+    background: #283036
+    border-radius: 15px
+    //border: none
+    border: 1.5px solid #32393E
+    outline: none
+    padding-inline-start: 24px
+    padding-inline-end: 155px
+    font-family: 'Poppins'
+    @include fontStyle($regularColor, normal, 400, 14px, 21px)
+
+button
+    position: absolute
+    top: 8px
+    right: 13px
+    border: none
+    outline: none
+    cursor: pointer
+    background: $btnColor
+    width: 130.43px
+    height: 48px
+    border-radius: 8px
+    font-family: 'Poppins'
+    @include fontStyle($white, normal, 600, 16px, 24px, center)
+
+
+
+.footer .container
+    border-top: 0.5px solid rgba(255, 255, 255, 0.15)
+    padding-top: 70px
+
+.footer__inner
+    display: flex
+    justify-content: space-between
+    flex-direction: row
+    height: 183px
+
+
+.footer__box
+    flex: 0 1 260px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    p
+        @include fontStyle($regularColor, normal, 400, 14px, 25px)
+    .copyright
+        @include fontStyle($titleColor, normal, 500, 16px, 24px)
+
+.box__header
+    display: flex
+
+    .footer-title
+        @include fontStyle($titleColor, normal, 600, 22px, 33px)
+    img
+        max-width: 38px
+        margin-right: 12px
+    p
+        @include fontStyle($titleColor, normal, 600, 22px, 33px)
+
+
+.footer__box2
+    flex: 0 1 197px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .footer-title
+        margin-bottom: 20px
+        @include fontStyle($titleColor, normal, 500, 20px, 20px)
+
+.footer__title
+    display: flex
+    justify-content: center
+    align-content: center
+    align-items: center
+
+
+.footer-list
+    flex: 1
+    display: flex
+    flex-direction: column
+    p
+        @include fontStyle($regularColor, normal, 500, 16px, 24px)
+    a
+        @include fontStyle($regularColor, normal, 500, 16px, 24px)
+    p+p
+        margin-top: 10px
+    a+a
+        margin-top: 10px
+
+
+
+

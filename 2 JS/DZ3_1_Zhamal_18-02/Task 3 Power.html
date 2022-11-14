@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3 Power</title>
+</head>
+<body>
+Создайте функцию power, которая будет делать то же самое, что и Math.pow - возводить указанное число в степень.
+При этом, если второй параметр не был передан, считать, что мы возводим в квадрат.<script>
+    function power(num, pow = 2) {
+        return Math.pow(num, pow);
+    }
+
+    const num = prompt("Number:");
+    const pow = prompt("Power:");
+
+    if (pow === null || pow === ""){
+        alert(power(Number(num)));
+    } else {
+        alert(power(Number(num), Number(pow)));
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

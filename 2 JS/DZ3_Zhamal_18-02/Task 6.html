@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка распределения генератора псевдослучайных чисел</title>
+</head>
+<body>
+
+Проверим, как работает генератор псевдослучайных чисел Math.random() в JavaScript.
+Нужно написать программу, которая сгенерирует много случайных чисел от 0 до 99.
+При этом мы будем разделять их на 10 групп: 0-9, 10-19, 20-29 и так далее.
+Необходимо вывести, какое количество чисел будет принадлежать каждой группе.
+
+
+<script>
+
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    const min = 0, max = 99;
+    let num, numGroup;
+    let groups = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    const cnt = Number(prompt("Generate how many times?", "100"));
+
+    //generate numbers
+    for (let i = 0; i < cnt; i++) {
+        num = randomNumber(min, max);
+        numGroup = Number(num.toString().substring(0, 1)); //1st digit
+        //на твоем месте я бы разделил ямчло на разряд числа, чтобы если поменять промежуток, тип макс 999, все работало
+        switch (numGroup) {
+            case 0:
+                groups[0]++;
+                break;
+            case 1:
+                groups[1]++;
+                break;
+            case 2:
+                groups[2]++;
+                break;
+            case 3:
+                groups[3]++;
+                break;
+            case 4:
+                groups[4]++;
+                break;
+            case 5:
+                groups[5]++;
+                break;
+            case 6:
+                groups[6]++;
+                break;
+            case 7:
+                groups[7]++;
+                break;
+            case 8:
+                groups[8]++;
+                break;
+            case 9:
+                groups[9]++;
+                break;
+            default:
+                console.log("Error");
+                break;
+        } // if (num >= 0 && num <= 9)
+    }
+
+    //print groups
+    for (let i = 0; i < groups.length; i++) {
+        if (i === 0) {
+            console.log(i + " to 9:", groups[i]);
+        } else {
+            console.log(i + "0 to " + i + "9:", groups[i]);
+        }
+    }
+
+</script>
+</body>
+</html>

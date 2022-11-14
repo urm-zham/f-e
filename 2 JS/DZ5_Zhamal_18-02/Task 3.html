@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+</head>
+<body>
+
+<p class="question">
+    Висит груша - нельзя скушать.
+    <span id="answer-1" class="answer" style="display: none">Лампочка</span>
+</p>
+
+<p class="question">
+    С луком с яйцами, но не пирожок?
+    <span id="answer-2" class="answer" style="display: none">Робин Гуд</span>
+</p>
+
+<p class="question">
+    Один глаз, один рог, но не носорог?
+    <span id="answer-3" class="answer" style="display: none">Корова из-за угла выглядывает</span>
+</p>
+
+
+<script>
+    function showAnswer(element) {
+        const answer = element.previousElementSibling;
+
+        if (answer.style.display === "none") {
+            answer.style.display = "inline";
+        } else {
+            answer.style.display = "none";
+        }
+    }
+
+    function showButtons() {
+        const questions = document.getElementsByClassName("question");
+
+        for (let i = 0; i < questions.length; i++) {
+            const btn = document.createElement("button");
+            btn.innerText = "Посмотреть ответ";
+            btn.id = "btn-" + (i + 1);
+            btn.setAttribute("onclick", "showAnswer(this); return false");
+            questions[i].append(btn);
+        }
+    }
+
+    //call
+    showButtons();
+
+
+</script>
+</body>
+</html>

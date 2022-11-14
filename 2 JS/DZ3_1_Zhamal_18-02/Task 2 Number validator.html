@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2 Number validator</title>
+</head>
+<body>
+Напишите функцию-валидатор, которая запрашивает и проверяет целое число, введенное пользователем
+<script>
+    function validateNumber(num) {
+        let res = "";
+        if (num == null)
+        {
+            res = "Вы нажали \"Отмена\"";
+        }
+        else if (Number(num) === 0)
+        {
+            res = "Вы ввели ноль";
+        }
+        else if (isNaN(Number(num)))
+        {
+            res = "Вы ввели не число";
+        }
+        else if (Number(num) > 0)
+        {
+            res = "Вы ввели положительное число";
+        }
+        else if (Number(num) < 0)
+        {
+            res = "Вы ввели отрицательное число";
+        }
+        return res;
+    }
+
+    //call
+    const num = prompt("Enter a number");
+
+    alert(validateNumber(num));
+
+
+
+</script>
+</body>
+</html>

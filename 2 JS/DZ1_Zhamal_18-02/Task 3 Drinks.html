@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 1 Task 3 Drinks</title>
+</head>
+<body>
+<!--Задание 3-->
+<!--Нужно написать программу на JS, которая спрашивает у пользователя про его любимый напиток. Пользователь должен ввести ответ в свободном виде.-->
+<!--Если пользователь введет "beer" или "vodka", нужно показать сообщение, которое предупреждает пользователя о вреде чрезмерного употребления алкоголя.-->
+<!--Если пользователь введет "coffee", нужно показать сообщение, которое предупреждает о вреде кофеина.-->
+<!--Если пользователь введет "milk", нужно поздравить его с таким выбором.-->
+<!--Если пользователь введет что-то другое, то показать нейтральное сообщение на ваш выбор.-->
+
+
+
+<script>
+    let ans = prompt("What is your favorite drink?").trim().toLowerCase();
+    let res = "";
+
+    switch (ans) {
+        case "beer":
+            case "vodka":
+                case "wine":
+                    res = "Not a really good choice. Heavy drinking increases your blood pressure and blood cholesterol levels, both of which are major risk factors for heart attacks and strokes. " +
+                        "Long-term alcohol misuse can weaken your immune system, making you more vulnerable to serious infections.";
+                    break;
+
+        case "coffee":
+            res = "Good choice. Coffee has a lot of benefits, but beware of high caffeine content. Caffeine can have various negative effects, such as anxiety and disrupted sleep — but this depends greatly on the individual.";
+            break;
+
+        case "tea":
+            res = "Healthy choice. But better avoid drinking black or green tea too late in the evening since these also contain caffeine, which may disrupt your sleep.";
+            break;
+
+        case "milk":
+            res = "Great choice. (if you are not lactose intolerant and if the milk is of good quality)";
+            break;
+
+        case "kefir":
+            case "yogurt":
+                res = "Great choice. Good for your gut health and easier to digest compared to milk since it's fermented. ";
+                break;
+
+        case "soda":
+            res = "Not a really good choice. Low nutritional content and high sugar content.";
+            break;
+
+        case "water":
+            res = "Truly the best or safest choice. If possible drink at least 8 glasses of clean water.";
+            break;
+
+        default:
+            res = "Never heard of this drink before, but thank you for the answer.";
+            break;
+    }
+
+    alert(ans.toUpperCase() + " - " + res);
+
+</script>
+</body>
+</html>

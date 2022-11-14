@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+</head>
+<body>
+
+<script>
+
+    const adminUser = {
+        username: "admin",
+        password: "BlackOverlord"
+    }
+
+    const userName = prompt("Enter username:");
+
+    if (userName === null || userName === "") {
+        alert("Login cancelled");
+
+    } else if (userName === adminUser.username) {
+
+        const userPass = prompt("Enter password:");
+
+        if (userPass === adminUser.password) {
+            alert("Welcome!");
+        } else {
+            alert("Wrong password!");
+        }
+
+    } else {
+        alert("Unknown user");
+    }
+
+</script>
+</body>
+</html>

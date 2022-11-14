@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 1 Task 4 Find error</title>
+</head>
+<body>
+<!--Если этот код запустить, какое сообщение будет появляться? Исправьте логическую ошибку. Напишите в виде комментария возле ошибочной строки, что было неверно и как ее исправили.-->
+
+<script>
+    const number = 10;
+
+    // Error: "Uncaught TypeError: Assignment to constant variable."
+    // Reason: the variable of type CONST cannot be reassigned another value. (To reassign change const to let)
+    // Actual reason: " number = 11 " is an assignment operator, while logical statements should use comparison operators.
+    // Solution: change if(number = 11) to if(number === 11)
+
+    if (number === 11) { //logical statement should use comparison operators
+        alert('Number is 11!');
+    } else {
+        alert('Number is 10!');
+    }
+
+</script>
+</body>
+</html>

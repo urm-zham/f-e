@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1 Celsius to fahrenheit</title>
+</head>
+<body>
+Написать функцию, которая будет конвертировать температуру из шкалы цельсия в шкалу фаренгейта. Функция принимает один аргумент - температуру в цельсиях, и возвращает значение в фаренгейтах. Расчет производится по следующей формуле:
+
+F = (C*9 / 5) + 32;
+
+Контрольные примеры:
+convert(0);
+<  32
+convert(5);
+<  41
+
+<script>
+
+    const celToFar = (degCel) => (degCel * 9 / 5) + 32;
+
+    const degC = prompt("Enter temperature in Celsius");
+
+    const degF = celToFar(Number(degC));
+
+    alert(degF);
+
+
+</script>
+</body>
+</html>

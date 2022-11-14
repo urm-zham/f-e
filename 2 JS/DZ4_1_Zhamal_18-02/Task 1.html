@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1 R-P-S</title>
+</head>
+<body>
+
+
+<script>
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    const rsp = ["rock", "paper", "scissors"];
+    let user="", computer="";
+    let userWin = 0, compWin = 0;
+
+
+    do {
+        user = prompt("Rock, Paper, Scissors?");
+
+        if (user !== null && user !== "") {
+
+            computer = rsp[randomNumber(0,rsp.length-1)];
+
+            if (user === computer)
+            {
+                alert(user + " (you) VS "+computer+" (computer)\n It's a tie!");
+            }
+            else if (user === "rock")
+            {
+                if (computer === "paper") {
+                    alert(user + " (you) VS "+computer+" (computer)\n Computer won!");
+                    compWin++;
+                } else {
+                    alert(user + " (you) VS "+computer+" (computer)\n You won!");
+                    userWin++;
+                }
+            }
+            else if (user === "paper")
+            {
+                if (computer === "scissors") {
+                    alert(user + " (you) VS "+computer+" (computer)\n Computer won!");
+                    compWin++;
+                } else {
+                    alert(user + " (you) VS "+computer+" (computer)\n You won!");
+                    userWin++;
+                }
+            }
+            else if (user === "scissors")
+            {
+                if (computer === "rock") {
+                    alert(user + " (you) VS "+computer+" (computer)\n Computer won!");
+                    compWin++;
+                } else {
+                    alert(user + " (you) VS "+computer+" (computer)\n You won!");
+                    userWin++;
+                }
+            }
+        }
+
+    }  while (user !== null && user !== "");
+
+    if (compWin > userWin) {
+        winner = "Computer won!";
+    } else if (compWin < userWin) {
+        winner = "User won!";
+    } else {
+        winner = "It's a tie!";
+    }
+
+    alert(
+        "User's score: " + userWin + "\n" +
+        "Computer's score: " + compWin + "\n" +
+        "Winner: " + winner
+    )
+
+
+</script>
+</body>
+</html>

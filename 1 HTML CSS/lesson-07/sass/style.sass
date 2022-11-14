@@ -1,0 +1,28 @@
+@import "new"
+$color: #FF6E30
+$border: 10px solid $color
+$num: 20 / 5 * 10
+body
+  background-color: darkolivegreen
+  margin: 0
+  padding: 0
+
+@mixin font
+  font-size: 20px
+  font-weight: bold
+  color: red
+
+@mixin font2($fs, $fw, $fc: red, $p...)
+@mixin
+.example
+  background-color: green
+  font-size: 20px
+  @include font
+  a
+    color: aqua
+  p
+    color: chocolate
+    a
+      font-size: 1.5em
+
+

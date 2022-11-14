@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+</head>
+<body>
+
+<script>
+
+    let num;
+    let cnt = {
+        total: 0,
+        corrAns: 0,
+        incorAns: 0
+    }
+    let ans;
+    let corrAns = 0, incorAns = 0, sumAns = 0;
+
+
+    do {
+        if (cnt.incorAns === 3) {break;}
+
+        num = randomNumber(1, 7);
+
+        ans = prompt("Guess a number from 1 to 7:");
+
+        if (isNaN(ans)) {continue;}
+        if (Number(ans) <= 0 || Number(ans) > 7) {continue;}
+
+
+        if (Number(ans) === num) {
+            alert("Correct! The number was " + num + " and you guessed " + ans);
+            cnt.corrAns++;
+            cnt.total++;
+        }
+        else if (Number(ans) !== num && ans !== null) {
+            alert("Wrong! The number was " + num + " and you guessed " + ans);
+            cnt.incorAns++;
+            cnt.total++;
+        }
+        // console.log(cnt.total, cnt.corrAns, cnt.incorAns);
+
+
+    } while (ans !== null)
+
+
+    alert(
+        "Total number of tries: " + cnt.total + "\n" +
+        "Correct: " + cnt.corrAns + "\n" +
+        "Incorrect: " + cnt.incorAns
+    )
+
+
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+</script>
+</body>
+</html>

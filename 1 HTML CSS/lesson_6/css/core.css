@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font: 14px 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #E8E9EA;
+}
+.wrapper {
+    background-color: #1E252B;
+}
+.wrapper > div {
+    margin-bottom: 200px;
+}
+.container {
+    width: 1224px;
+    margin: 0 auto;
+}
+.section-title {
+    text-align: center;
+}
+.section-title h2 {
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 63px;
+}
+.section-title p {
+    width: 427px;
+    margin: 0 auto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+}

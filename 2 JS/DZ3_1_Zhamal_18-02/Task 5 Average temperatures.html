@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5 Average temperatures</title>
+</head>
+<body>
+Дано несколько массивов содержащих температуры за каждый день недели из четырех метеорологических станций,
+находящихся поблизости.
+Найти среднее арифметическое всех температур и вывести полученное значение.
+
+<script>
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function getAverageTemp(tempArr) {
+        let averageTemp, sum = 0;
+        for (let i = 0; i < tempArr.length; i++) {
+            sum += tempArr[i];
+        }
+        console.log(sum + " / " + tempArr.length);
+        averageTemp = sum / tempArr.length;
+        return averageTemp;
+    }
+
+    //generate arrays with random temperatures
+    const southData = Array.from({length: 7}, () => randomNumber(13, 25));
+    const westData = Array.from({length: 7}, () => randomNumber(13, 25));
+    const eastData = Array.from({length: 7}, () => randomNumber(13, 25));
+    const northData = Array.from({length: 7}, () => randomNumber(13, 25));
+
+    console.log(southData);
+    console.log(westData);
+    console.log(eastData);
+    console.log(northData);
+
+    //combine all arrays into one
+    const temps = southData.concat(westData).concat(eastData).concat(northData);
+    console.log(temps);
+
+    //call
+    console.log(getAverageTemp(temps));
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

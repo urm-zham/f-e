@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+<script>
+
+    const tasks = [
+        {id: 234, title: 'Create user registration API', timeSpent: 4, category: 'Backend', type: 'task'},
+        {id: 235, title: 'Create user registration UI', timeSpent: 8, category: 'Frontend', type: 'task'},
+        {id: 237, title: 'User sign-in via Google UI', timeSpent: 3.5, category: 'Frontend', type: 'task'},
+        {id: 238, title: 'User sign-in via Google API', timeSpent: 5, category: 'Backend', type: 'task'},
+        {id: 241, title: 'Fix account linking', timeSpent: 5, category: 'Backend', type: 'bug'},
+        {id: 250, title: 'Fix wrong time created on new record', timeSpent: 1, category: 'Backend', type: 'bug'},
+        {id: 262, title: 'Fix sign-in failed messages', timeSpent: 2, category: 'Frontend', type: 'bug'},
+    ];
+
+    //●	Общее количество времени, затраченное на работу над задачами из категории 'Frontend'
+    const filteredFrontEnd = tasks.filter((item) => {
+        return item.category === "Frontend";
+    })
+    // console.log(filteredFrontEnd);
+
+    const totalTimeFront = filteredFrontEnd.reduce((timeTotal, item) => {
+        return item.timeSpent + timeTotal;
+    }, 0)
+    console.log("Общее количество времени, затраченное на категорию Frontend: " + totalTimeFront);
+
+    //●	Общее количество времени, затраченное на работу над задачами типа 'bug'
+    const filteredTypeBug = tasks.filter((item) => {
+        return item.type === "bug";
+    })
+    // console.log(filteredTypeBug);
+
+    const totalTimeBug = filteredTypeBug.reduce((timeTotal, item) => {
+        return item.timeSpent + timeTotal;
+    },0)
+    console.log("Общее количество времени, затраченное на работу над задачами типа 'bug': " + totalTimeBug);
+
+    //●	Количество задач, имеющих в названии слово "UI"
+    const filteredTitleUI = tasks.filter((item) => {
+        return item.title.includes("UI");
+    })
+    // console.log(filteredTitleUI);
+
+    const totalTitleUI = filteredTitleUI.reduce((cnt, item) => {
+        return ++cnt;
+    },0)
+    console.log("Количество задач, имеющих в названии слово UI: " + totalTitleUI);
+
+    //●	Получите количество задач каждой категории в объект вида: {Frontend: 3, Backend: 4}
+    const categories = tasks.reduce((obj, item) => {
+        if (!obj.hasOwnProperty(item.category)) {
+            obj[item.category] = 0;
+        }
+        obj[item.category]++;
+        return obj;
+    }, {});
+    console.log(categories);
+
+    // // ●	Массив задач с затраченным временем больше 4 часов.
+    // // В массиве должны быть объекты только с ключами title и category.
+    const fourHour = tasks.filter((item) => {
+        return item.timeSpent > 4
+    })
+    // console.log(fourHour)
+
+    const fourHoursTasks = fourHour.map((item) => {
+        return {title: item.title, category: item.category}
+    })
+    console.log(fourHoursTasks)
+
+
+</script>
+</body>
+</html>

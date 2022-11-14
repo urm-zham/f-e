@@ -1,0 +1,20 @@
+#deux {
+    color: blue;
+    font-weight: bold;
+}
+.class1 {
+    color: darkred;
+    font-family: "Times New Roman";
+}
+
+div {
+    /*color: teal;*/
+    /*color: #095068;*/
+    /*color: rgb(175,198,40,0.6);*/
+    color: saddlebrown !important;
+    width: 500px;
+    font-family: "Arial Narrow";
+    text-align: justify;
+    font-size: 20px;
+}
+

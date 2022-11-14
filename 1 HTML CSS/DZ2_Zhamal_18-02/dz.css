@@ -1,0 +1,34 @@
+div {
+    text-align: center;
+    width: 30%;
+    margin:0 auto;
+}
+
+h2 {
+    font-family: Serif;
+    color: blue;
+    font-weight: bold;
+}
+
+h4 {
+    font-family: Serif;
+    color: blue;
+    font-weight: bold;
+}
+
+p {
+    font-family: sans-serif;
+    text-indent: 40px;
+    text-align: justify;
+    line-height: 2;
+}
+
+.bold-red {
+    color: red;
+    font-weight: bold;
+}
+
+.italic-blue {
+    color: blue;
+    font-style: italic;
+}

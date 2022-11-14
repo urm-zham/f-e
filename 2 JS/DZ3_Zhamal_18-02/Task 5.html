@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Разделение Нлогонии</title>
+</head>
+<body>
+
+Пользователь должен ввести координаты своего дома с помощью функции prompt.
+
+Вывод: Вы должны вывести результат:
+
+border - если дом находится на границе
+NW - если дом находится в северо-западной части страны (NW = North West)
+NE - если дом находится в северо-восточной части страны (NE = North East)
+SW - если дом находится в юго-западной части страны (SW = South West)
+SE - если дом находится в юго-восточной части страны (SE = South East)
+
+
+<script>
+
+    const border = {
+        x : 12,
+        y : 6
+    }
+
+    let x1 = prompt("Enter X:");
+    let y1 = prompt("Enter Y:");
+
+    if (x1 !== null && y1 !== null)
+    {
+        if (x1 == "" || y1 == "" || isNaN(Number(x1)) || isNaN(Number(y1)))
+        {
+            alert("Please enter valid number");
+        }
+        else
+        {
+            x1 = Number(x1);
+            y1 = Number(y1);
+
+            if (x1 === border.x || y1 === border.y) {
+                alert("border");
+            } else if (x1 < border.x && y1 > border.y) {
+                alert("NW");
+            } else if (x1 > border.x && y1 > border.y) {
+                alert("NE");
+            } else if (x1 < border.x && y1 < border.y) {
+                alert("SW");
+            } else if (x1 > border.x && y1 < border.y) {
+                alert("SE");
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

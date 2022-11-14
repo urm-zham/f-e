@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2 Hangman</title>
+</head>
+<body>
+
+
+<script>
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    function isLetter(char) {
+        if (char.length > 1) {
+            return false;
+        }
+        if (typeof char !== "string") {
+            return false;
+        }
+        return /^[a-zA-Z]+$/.test(char);
+    }
+
+    let game = {
+        word: "",
+        guess: "",
+        corr: 0,
+        wrong: 0
+    }
+
+    let wordArr = [];
+    let guess = "";
+
+    const rsp = ["sky"]; //, "earth", "mud"];
+    let user="", computer="";
+    let userWin = 0, compWin = 0;
+
+
+    do {
+        user = prompt("Enter one letter:");
+
+        if (user !== null && user !== "" && isLetter(user)) {
+
+            //choose word randomly
+            game.word = rsp[randomNumber(0, rsp.length - 1)];
+
+            //convert word to array
+            wordArr = Array.from(game.word);
+            console.log(wordArr.length);
+
+            for (let i = 0; i < wordArr.length; i++) {
+                if (user === wordArr[i]) {
+                    guess += " " + user;
+                } else {
+                    guess += " _ ";
+                }
+            }
+
+            alert(guess);
+            game.guess = guess;
+            alert(game.guess)
+            // guess = "";
+
+
+
+
+        }
+    }  while (user !== null && user !== "");
+
+    // if (compWin > userWin) {
+    //     winner = "Computer won!";
+    // } else if (compWin < userWin) {
+    //     winner = "User won!";
+    // } else {
+    //     winner = "It's a tie!";
+    // }
+    //
+    // alert(
+    //     "User's score: " + userWin + "\n" +
+    //     "Computer's score: " + compWin + "\n" +
+    //     "Winner: " + winner
+    // )
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Количество жизни</title>
+</head>
+<body>
+Необходимо написать программу, которая отобразит пользователю
+по количеству полных лет, сколько месяцев, дней, минут и секунд он прожил.
+
+<script>
+    const years = Number(prompt("Enter your age"));
+
+    const months = years * 12;
+    const days = years * 365;
+    const hours = days * 24;
+    const minutes = hours * 60;
+    const seconds = minutes * 60;
+
+    console.log()
+    alert("You have lived:" + "\n"+
+                "Years: " + years + "\n" +
+                "Months: " + months + "\n" +
+                "Days: " + days + "\n" +
+                "hours: " + hours + "\n" +
+                "minutes: " + minutes + "\n" +
+                "seconds: " + seconds
+
+    );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="input-group mb-3">
+        <input id = "item" type="text" class="form-control" placeholder="Item name" aria-label="Item name" aria-describedby="basic-addon2">
+        <input id = "cost" type="number" class="form-control" placeholder="Cost" aria-label="Cost" aria-describedby="basic-addon2">
+        <button class="input-group-text btn btn-success" id="basic-addon2">Add</button>
+    </div>
+
+    <ul class="list-group">
+    </ul>
+
+    <div class="mt-5 mb-5 d-flex flex-column align-items-center fixed-bottom ">
+        <span style="font-size: 30px">Total spent</span>
+        <span id="total" style="font-size: 25px">0 KGS</span>
+    </div>
+</div>
+
+<script>
+
+    const itemField = document.querySelector("#item");
+    const costField = document.querySelector("#cost");
+    const btn = document.querySelector("#basic-addon2");
+    const totalDisplay = document.querySelector("#total");
+    const itemList = document.querySelector(".list-group");
+    const items = [];
+
+    const addItem = () => {
+        const li = document.createElement("li");
+        li.className = "mb-2 list-group-item  d-flex justify-content-between align-items-center text-wrap";
+
+        const item = document.createElement("span");
+        item.innerText = itemField.value;
+        
+        const cost = document.createElement("span");
+        const costNum = Number(costField.value);
+        cost.innerText = costField.value + " KGS";
+        items.push(costNum);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.className = "btn btn-danger";
+        deleteBtn.innerText = "Delete";
+        deleteBtn.addEventListener("click", deleteItem);
+        deleteBtn.addEventListener("click", setTotal);
+
+        li.append(item,cost, deleteBtn);
+        itemList.append(li);
+        itemField.value = "";
+        costField.value = "";
+    }
+
+    function deleteItem() {
+        const del = Array.from(this.parentNode.parentNode.children);
+        console.log(del);
+        const ind = del.indexOf(this.parentNode);
+        console.log(ind);
+        items.slice(ind,1);
+
+        this.parentNode.remove();
+    }
+
+    function setTotal(){
+        const sum = items.reduce((total, item) => {
+            return total + item;
+        },0)
+        totalDisplay.innerText = sum + " KGS";
+    }
+
+    btn.addEventListener("click", addItem);
+    btn.addEventListener("click", setTotal);
+
+
+</script>
+</body>
+</html>

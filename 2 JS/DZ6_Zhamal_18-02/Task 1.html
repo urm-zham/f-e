@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 1</title>
+</head>
+<body>
+
+
+
+
+<script>
+    function findSum(obj){
+        const objArr = Object.entries(obj);
+
+        let sum = 0;
+
+        for (let i = 0; i < objArr.length; i++) {
+
+            if (!isNaN(objArr[i][1].toString())) {
+                console.log(objArr[i][1]);
+                sum += objArr[i][1];
+            }
+        }
+        return sum;
+    }
+
+    const salaries = {
+        "Vasiliy": 100,
+        "Piotr": 300,
+        "Daria": 250,
+        "isPaid": false
+    };
+
+    console.log(findSum(salaries));
+
+
+</script>
+</body>
+</html>

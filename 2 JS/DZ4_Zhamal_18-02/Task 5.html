@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 5</title>
+</head>
+<body>
+
+    <div id="cart-items">
+        <div class="item">Milk 1 l. <span class="qty">x 2</span></div>
+        <div class="item">Cola 1.5 l. <span class="qty">x 1</span></div>
+        <div class="item">Bread <span class="qty">x 2</span></div>
+        <div class="item">Cheese <span class="qty">x 1</span></div>
+        <div class="item">Chocolate bar <span class="qty">x 3</span></div>
+    </div>
+
+<script>
+
+    //parent
+    const cartItems = document.getElementById("cart-items");
+    console.log(cartItems.children)
+
+    //remove child
+    const removedItem = cartItems.children[1];
+    removedItem.remove();
+
+    //replace child
+    const oldItem = cartItems.children[3];
+
+    const newItem = document.createElement("div");
+    // newItem.innerHTML = "Canned Fish <span class=\"qty\">x 3</span>";
+    //or (?)
+    newItem.innerText = "Canned Fish ";
+    const newItemSpan = document.createElement("span");
+    newItemSpan.classList.add("qty");
+    newItemSpan.innerText="x 4";
+    newItem.append(newItemSpan);
+    console.log(newItem);
+
+    cartItems.replaceChild(newItem, oldItem);
+
+</script>
+</body>
+</html>
